@@ -15,8 +15,6 @@ class Account(AbstractBaseUser, PermissionsMixin):
         ORGANIZER = 'O', _('competition organizer')
         NORMAL = 'N', _('normal')
 
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=100, unique=True)
 
     role = models.CharField(max_length=1, choices=Roles.choices)
@@ -43,3 +41,18 @@ class Account(AbstractBaseUser, PermissionsMixin):
 
     def has_module_perm(self, add_label):
         return self.is_superuser
+
+
+class Profile(models.Model):
+    """
+        Profile model associated with User's Account model
+    """
+    account = models.ForeignKey(to=Account, on_delete=models.CASCADE, related_name="profile_account")
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    awards = models.CharField(max_length=255, null=True)
+    trophies = models.CharField(max_length=255, null=True)
+    social_links = models.JSONField()
+
+    def __str__(self) -> str:
+        return f"{self.first_name} {self.last_name}"
