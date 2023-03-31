@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'authentication.apps.AuthConfig'
+    'authentication.apps.AuthConfig',
+    'competition.apps.CompetitionConfig'
 ]
 
 MIDDLEWARE = [

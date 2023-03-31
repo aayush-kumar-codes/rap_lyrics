@@ -28,9 +28,9 @@ class Submission(models.Model):
     Model to represent a user's submission for a specific competition.
     """
     rapper = models.ForeignKey(
-        to=Account,
-        on_delete=models.CASCADE,
-        limit_choices_to={'role': 'R'}
+            to=Account,
+            on_delete=models.CASCADE,
+            limit_choices_to={'role': 'R'}
         )
     competition = models.ForeignKey(to=Competition, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
