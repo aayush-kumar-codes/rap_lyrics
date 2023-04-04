@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'authentication.apps.AuthConfig',
+    'competition.apps.CompetitionConfig'
 ]
 
 MIDDLEWARE = [
@@ -98,6 +100,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# Authentication model
+AUTH_USER_MODEL = 'authentication.Account'
 
 
 # Internationalization
