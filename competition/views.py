@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def list_all_competition(request):
+    return render(request=request, template_name='competition/competition.html')
