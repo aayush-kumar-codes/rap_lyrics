@@ -1,0 +1,31 @@
+{% load static %}
+{% block header %}
+<header>
+    <!-- header inner -->
+      <div class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col logo_section">
+              <div class="full">
+                <div class="center-desk">
+                  <div class="logo">
+                    <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="#" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-9">
+              
+               <div class="menu-area">
+                <div class="limit-box">
+                  {% include "components/nav.html" %}
+                
+               </div> 
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- end header inner -->
+</header>
+{% endblock header %}
